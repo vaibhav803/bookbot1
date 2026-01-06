@@ -30,9 +30,31 @@ def num_of_characters(words):
     # return mydict
     # mydict = dict.fromkeys(characters,num_of_characters)
     # return mydict
+
     my_dict = {key:value for key,value in zip(characters,count_of_character)}
-    return my_dict
+    list_of_dict = []
+    # keys_of = my_dict.keys()
+    # values_of = my_dict.values()
+    for key, value in my_dict.items():
+        value = {"char":key, "num" : value}
+        list_of_dict.append(value)
+
+    #     updated = dict(char = key  , num = value) 
+    #     list_of_dict.append(updated)
+    # return list_of_dict
+
+    return list_of_dict
+
+def count_on(dictionary):
+    return dictionary["num"]
 
 
+def sorted(dict_to_sort):
+    dict_to_sort.sort(reverse = True,key = count_on)
+
+    return dict_to_sort
             
 
+
+
+   
